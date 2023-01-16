@@ -27,19 +27,18 @@
             const title = "Welcome to my React Website"
             const subtitle = "This is a website for learning React"
             const address = "http://www.netninja.dev"
+
+            const handleClick = (e) => {
+                    console.log('you clicked the button')
+                    console.log('the site title is:', title)
+                    console.log(e)
+            }
+
             return (
                 <div className="banner">
                     <h2>{title.toUpperCase()}</h2>
                     <p>{subtitle}</p>
-                    <p>Today's date is: {new Date().toDateString()}</p>
-                    <p>Random number: {Math.random() * 100}</p>
-                    <a href={address}>Visit the Net Ninja site</a>
-                    <div>
-                        <p>nested div</p>
-                    </div>
-                    <footer>
-                        <p>JSX footer</p>
-                    </footer>
+                    <button onClick={(e) => {console.log(e)}}>Click me</button>
                 </div>
             )
         }
