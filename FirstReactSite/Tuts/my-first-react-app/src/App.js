@@ -23,10 +23,15 @@ function App() {
     console.log(id)
   }
 
+  const st = "Units in Algebra 2"
+  const st2 = "Units in Pre-calc"
+
+
   return (
     <div className="App">
 
-      <Title />
+      <Title title="Algebra 2" subtitle={st} />
+      <Title title="Pre-calc" subtitle={st2} />
 
       {showEvents && (
         <div>
