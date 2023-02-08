@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { Mafs, Coordinates } from "mafs"
 import './App.css';
 
 function App() {
@@ -18,7 +19,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <Mafs>
+      <Coordinates.Cartesian />
+    </Mafs>
     </div>
+    
   );
 }
 
