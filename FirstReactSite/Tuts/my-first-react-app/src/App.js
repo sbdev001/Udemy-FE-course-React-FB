@@ -42,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      
 
       <Title title="Algebra 2" subtitle={st} />
       <Title title="Pre-calc" subtitle={st2} />
