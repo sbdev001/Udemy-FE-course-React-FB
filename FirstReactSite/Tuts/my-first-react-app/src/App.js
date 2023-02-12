@@ -1,12 +1,27 @@
 import './App.css'
 import React, { useState } from 'react'
 import Title from './components/Title'
-import Modal from './components/Modal'
+import './components/Modal.css'
+//import './components/Themes.js'
+//import Modal from './components/Modal'
+import { Box, Button } from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline';
+import Modal from '@mui/material/Modal'
 import EventList from './components/EventList'
+import { MathJax, MathJaxContext } from "better-react-mathjax"
+import './components/Question.js'
+import { palette, positions } from '@mui/system';
+import Question from './components/Question.js'
+//import { Fade } from '@material-ui/core'
+
 
 function App() {
 
   const [showModal, setShowModal] = useState(false)
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   const [showEvents, setShowEvents] = useState(true)
 
@@ -27,10 +42,10 @@ function App() {
     console.log(id)
   }
 
-  const handleClose = () => {
+/*  const handleClose = () => {
     setShowModal(false)
   }
-
+*/
   const handleShowModal = () => {
     setShowModal(true)
   }
@@ -39,13 +54,51 @@ function App() {
   const st = "Units in Algebra 2"
   const st2 = "Units in Pre-calc"
 
+  const lightTheme = createTheme({
+    palette: {
+      mode: 'light',
+    },
+  });
+
+  const modalbox = {
+      width: '100%',
+      height: '100%',
+      top: 0,
+      left: 0,
+      bgcolor: 'grey.200',
+      opacity: 1,
+  }
+  
 
   return (
     <div className="App">
-      
+      <ThemeProvider theme={lightTheme}>
+      <CssBaseline />
 
       <Title title="Algebra 2" subtitle={st} />
-      <Title title="Pre-calc" subtitle={st2} />
+
+      <br />
+      <br></br>
+      <Button variant='contained' onClick={handleOpen}>Show Question</Button>
+      <Modal 
+        open={open}
+        onClose={handleClose}
+      >
+      <Box sx={modalbox}>
+        <MathJaxContext>
+              <h2>Simplify the expression </h2>
+              <MathJax>{"\\(\\log_{5}{4x} - \\log_{5}{3x}\\)"}</MathJax>
+        </MathJaxContext>
+        <Question></Question>
+        <br></br>
+        <Button variant='outlined' onClick={handleClose}>Close</Button>
+      </Box>
+
+      </Modal>
+
+      <p></p>
+      
+      <p></p>
 
       {showEvents && (
         <div>
@@ -61,14 +114,8 @@ function App() {
      {showEvents && <EventList events={events} handleClick={handleClick} />      
      } 
 
-      <br />
-      <br></br>
-      <button onClick={handleShowModal}>Show Modal</button>
-      {showModal && <Modal handleClose={handleClose}>
-        <h1>10% off Coupon Code!</h1>
-        <p>Use the code Ninja at checkout</p>
-      </Modal>
-      }
+      
+      </ThemeProvider>
     </div>
   );
 }

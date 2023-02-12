@@ -1,4 +1,4 @@
-.modal-backdrop {
+.MuiModal-root.modal-backdrop {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -9,7 +9,7 @@
     transition: all 0.25s ease-in-out; */
 }
 
-.modal {
+.MuiModal-root {
     max-width: 500px;
     margin: 200px;
     background: white;
