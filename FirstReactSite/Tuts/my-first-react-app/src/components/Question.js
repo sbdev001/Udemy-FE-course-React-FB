@@ -36,6 +36,8 @@ export default function Question() {
       setError(true);
     }
   };
+
+  // Good discussion on ReactNode https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement
   
   const option1 = (
         <div>
@@ -53,6 +55,7 @@ export default function Question() {
         </div>
     )
   
+
 
   return (
     <form onSubmit={handleSubmit}>
