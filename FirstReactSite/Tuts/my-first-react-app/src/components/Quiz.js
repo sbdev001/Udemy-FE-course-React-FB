@@ -1,8 +1,15 @@
 import React from "react";		
 import { useState } from "react";
-import Question from './QuestionGeneric.js'		
+import Question from './QuestionGeneric.js'	
+import Typography from '@mui/material/Typography'
+import Card from '@mui/joy/Card'
+import Sheet from '@mui/joy/Sheet'
+import Stack from '@mui/joy/Stack'
+
 
 import { PropTypes } from 'prop-types';
+import { Box } from "@mui/system";
+import { Grid } from "@mui/material";
 
 export default function Quiz(props) {
     const [totalQuestions, setTotalQuestions] = useState(props.questions.length)
@@ -13,9 +20,10 @@ export default function Quiz(props) {
         <div>
             {props.questions.map((question, index) => (
                 console.log("Index: ", index), console.log("Question ID:", currQuestId),
-                (<React.Fragment key={index}>
+                ((currQuestId==index) && 
+                <React.Fragment key={index}>
                     <div>
-                        {(currQuestId==index) && 
+                        {
                         <Question question={question} 
                         qid={currQuestId} 
                         updateQID={setCurrentQuestionId}
@@ -26,7 +34,12 @@ export default function Quiz(props) {
                     </div>
                 </React.Fragment>)
             ))}
-            <p>Score: {score}/{props.questions.length}</p>
+            <Stack spacing={2}>
+                <p align='center'></p>
+                <p align='center'></p>
+                <p align='center'></p>
+                <p align='center'>Your score: {score}/{props.questions.length}</p>
+            </Stack>
         </div>
     )
 }
