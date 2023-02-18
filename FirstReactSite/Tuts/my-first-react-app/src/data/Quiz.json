@@ -1,0 +1,24 @@
+[		        
+    {		            
+        "id": "1",		            
+        "title":"Simplify the expression: \\(\\log_{5}{4x} - \\log_{5}{3x}\\)",
+        "answers": [
+            "\\(\\log_{5}\\frac{4}{3}\\)",
+            "\\(\\log_{5}{12}{x^2}\\)", 
+            "\\(\\log_{5}{4}{x^{3x}}\\)", 
+            "\\(3\\log_{5}{4}{x}\\)"
+        ],		            
+        "correctAnswer": 0	
+    },		        
+    {		            
+        "id": "2",		            
+        "title":"While word starts the same letter as Sun",		            
+        "answers": [
+            "Iron", 
+            "Air", 
+            "Silicon", 
+            "Oxygen"
+        ],		            
+        "correctAnswer": 2
+    }
+]

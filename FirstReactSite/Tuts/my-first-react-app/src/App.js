@@ -12,7 +12,10 @@ import EventList from './components/EventList'
 import { MathJax, MathJaxContext } from "better-react-mathjax"
 import './components/Question.js'
 import { palette, positions } from '@mui/system';
-import Question from './components/Question.js'
+//import Question from './components/Question.js'
+import Question from './components/QuestionGeneric.js'
+import Questions from './data/Quiz.json';
+import Quiz from './components/Quiz'
 //import { Fade } from '@material-ui/core'
 
 
@@ -23,7 +26,7 @@ function App() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
-  const [showEvents, setShowEvents] = useState(true)
+  const [showEvents, setShowEvents] = useState(false)
 
   const [events, setEvents] = useState([
     {title: "mario's birthday bash", id: 1},
@@ -69,6 +72,7 @@ function App() {
       opacity: 1,
   }
   
+//  <Quiz questions={Questions}> </Quiz>
 
   return (
     <div className="App">
@@ -79,17 +83,15 @@ function App() {
 
       <br />
       <br></br>
-      <Button variant='contained' onClick={handleOpen}>Show Question</Button>
+
+      <Button variant='contained' onClick={handleOpen}>Start Quiz</Button>
       <Modal 
         open={open}
         onClose={handleClose}
       >
       <Box sx={modalbox}>
-        <MathJaxContext>
-              <h2>Simplify the expression </h2>
-              <MathJax>{"\\(\\log_{5}{4x} - \\log_{5}{3x}\\)"}</MathJax>
-        </MathJaxContext>
-        <Question></Question>
+        <Quiz questions={Questions}></Quiz>
+  
         <br></br>
         <Button variant='outlined' onClick={handleClose}>Close</Button>
       </Box>
@@ -100,24 +102,29 @@ function App() {
       
       <p></p>
 
-      {showEvents && (
-        <div>
-          <button onClick={() => setShowEvents(false)}>hide events</button>
-        </div>
-      )}
-      {!showEvents && (
-        <div>
-          <button onClick={() => setShowEvents(true)}>show events</button>
-        </div>
-      )}
-      
-     {showEvents && <EventList events={events} handleClick={handleClick} />      
-     } 
+ 
 
       
       </ThemeProvider>
     </div>
   );
 }
+
+//        <Question question={Questions[0]}></Question>
+/*
+{showEvents && (
+  <div>
+    <button onClick={() => setShowEvents(false)}>hide events</button>
+  </div>
+)}
+{!showEvents && (
+  <div>
+    <button onClick={() => setShowEvents(true)}>show events</button>
+  </div>
+)}
+
+{showEvents && <EventList events={events} handleClick={handleClick} />      
+} 
+*/
 
 export default App;

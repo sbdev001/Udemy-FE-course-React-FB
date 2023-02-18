@@ -54,6 +54,39 @@ export default function Question() {
         </MathJaxContext>
         </div>
     )
+
+    const LogarithmicExpression = (
+          <div>
+            <p>
+              <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mrow>
+                  <mo>log</mo>
+                  <mfenced>
+                    <mrow>
+                      <mn>2</mn>
+                      <mi>x</mi>
+                    </mrow>
+                  </mfenced>
+                  <mo>+</mo>
+                  <mo>log</mo>
+                  <mfenced>
+                    <mrow>
+                      <mn>3</mn>
+                      <msup>
+                        <mi>x</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfenced>
+                </mrow>
+              </math>
+            </p>
+          </div>
+    );
+            
+      
+      
+      
   
 
 
@@ -61,6 +94,10 @@ export default function Question() {
     <form onSubmit={handleSubmit}>
       <FormControl sx={{ m: 3 }} error={error} variant="standard">
         <FormLabel id="demo-error-radios"></FormLabel>
+        <MathJaxContext>
+              <h2>Simplify the expression </h2>
+              <MathJax>{"\\(\\log_{5}{4x} - \\log_{5}{3x}\\)"}</MathJax>
+        </MathJaxContext>
         <RadioGroup
           aria-labelledby="demo-error-radios"
           name="quiz"
@@ -68,7 +105,7 @@ export default function Question() {
           onChange={handleRadioChange}
         >
           <FormControlLabel value="best" control={<Radio />} label={option1} />
-          <FormControlLabel value="worst" control={<Radio />} label={option2} />
+          <FormControlLabel value="worst" control={<Radio />} label={LogarithmicExpression} />
         </RadioGroup>
         <FormHelperText>{helperText}</FormHelperText>
         <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
