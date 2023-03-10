@@ -31,5 +31,71 @@
             "\\(x = 0\\)"
         ],
         "correctAnswer": 1
+    },
+    {      "id": "1",        
+            "title": "A rectangular field is 150 meters long and 60 meters wide. A farmer wants to double the length of the field and triple the width of the field, while keeping the same ratio of length to width. By how much should the farmer increase the area of the field?",        
+            "answers": [            
+                "270000 m^2",            
+                "216000 m^2",            
+                "162000 m^2",            
+                "108000 m^2"        
+            ],
+            "correctAnswer": 0
+    },
+    {
+        "id": "2",
+        "title": "The time it takes for a bucket to fill with water varies inversely with the rate at which the water is flowing into the bucket. It takes 12 minutes for the bucket to fill when the water is flowing at a rate of 2 liters per minute. How long will it take for the bucket to fill when the water is flowing at a rate of 3 liters per minute?",
+        "answers": [
+            "8 minutes",
+            "9 minutes",
+            "10 minutes",
+            "11 minutes"
+        ],
+        "correctAnswer": 1
+    },
+    {   "id": "1",        
+        "title": "The volume of gas in a container varies jointly with its pressure and temperature. If the pressure of the gas is tripled and the temperature is doubled, by what factor does the volume of the gas change?",        
+        "answers": [            
+            "6",            
+            "3",            
+            "2",            
+            "1.5"        
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "2",
+        "title": "The amount of time it takes to paint a house varies jointly with the size of the house and the number of workers painting the house. If it takes 10 days for 4 workers to paint a 2400 square foot house, how many days will it take 6 workers to paint a 3600 square foot house?",
+        "answers": [
+            "12 days",
+            "8 days",
+            "6 days",
+            "4 days"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "1",
+        "title": "The force of gravity between two objects varies jointly with their masses and inversely with the square of the distance between them. If the mass of one object is doubled, the distance between the objects is tripled, and the mass of the other object is halved, by what factor does the force of gravity change?",
+        "answers": [
+            "1/18",
+            "1/12",
+            "1/9",
+            "1/6"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "2",
+        "title": "The cost of electricity for a factory varies jointly with the number of kilowatt-hours used and the cost per kilowatt-hour. If it costs $0.10 per kilowatt-hour when 2000 kilowatt-hours are used, and $0.08 per kilowatt-hour when 3000 kilowatt-hours are used, how much will it cost to use 4000 kilowatt-hours at a rate of $0.12 per kilowatt-hour?",
+        "answers": [
+            "$72.00",
+            "$84.00",
+            "$96.00",
+            "$108.00"
+        ],
+        "correctAnswer": 1
     }
 ]
+
+
