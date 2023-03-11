@@ -17,6 +17,7 @@ import Question from './components/QuestionGeneric.js'
 import Questions from './data/Quiz.json';
 import Quiz from './components/Quiz'
 //import { Fade } from '@material-ui/core'
+import axios from 'axios'
 
 
 function App() {
@@ -35,6 +36,32 @@ function App() {
   ])
 
   console.log(showModal)
+
+  // Test returning of the Axios API call (works!!). The response is same is the contents of the Quiz.json file.
+//  const test = axios.get(`https://edusitesb.free.beeceptor.com/test/questions`)
+  const test = axios.get('https://dd5b5615-30b8-4f8b-ac53-d6a2738b2712.mock.pstmn.io/test/questions')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    console.log("success");
+    const responseQuestions = response.data;
+    Questions = responseQuestions
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+      // always executed
+      console.log("Completed")
+  });
+
+  console.log(Questions)
+
+  const data = test.data;
+  const status = test.status;
+  console.log(status);
+  console.log(data)
 
   const handleClick = (id) => {
     setEvents((prevEvents) => {
@@ -90,6 +117,7 @@ function App() {
         onClose={handleClose}
       >
       <Box sx={modalbox}>
+
         <Quiz questions={Questions}></Quiz>
   
         <br></br>
